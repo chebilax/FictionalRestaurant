@@ -10,7 +10,7 @@ Exemple 2 : La classe ProductController hérite de la classe SecurityController,
 
 
 Chaque classe est définie dans un namespace particulier. 
-Exemple :  la classe <span style="color:#188038">Product</span> définie dans le namespace models, la classe SecurityController définie dans le namespace controllers, et ainsi de suite. Permet de mieux organiser le code et de faciliter la maintenance.
+Exemple :  la classe <span style="color:green">Product</span> définie dans le namespace models, la classe SecurityController définie dans le namespace controllers, et ainsi de suite. Permet de mieux organiser le code et de faciliter la maintenance.
 Permet aussi d'importer des classes depuis d'autres namespaces. 
 Exemple : la classe ProductController hérite de la classe SecurityController qui est définie dans un autre namespace. 
 
