@@ -1,0 +1,24 @@
+<div class="user-form-container">
+  <h2><i class="fa-solid fa-lock"></i> Espace Utilisateur</h2>
+  <form action="index.php?action=login" method="post" class="user-form">
+    <fieldset>
+      <legend>Informations d'authentification</legend>
+      <label for="mail">Email :</label>
+      <input type="email" id="mail" name="mail" required>
+      <div class="form-group">
+        <label for="password">Mot de passe:</label>
+        <div class="password-container">
+          <input type="password" id="password" name="password" required>
+          <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-group">
+      <button type="submit" class="">Connexion</button>
+    </div>
+  </form>
+  <div class="user-options">
+    <span>Vous n'avez pas de compte ?</span>
+    <a href="index.php?action=createAccount" class="">Créer un compte</a>
+  </div>
+</div>

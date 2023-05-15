@@ -1,0 +1,32 @@
+<h2> Ajout d'un produit alimentaire au catalogue</h2>
+
+<form action="index.php?action=addProduct" method="post" enctype= "multipart/form-data">
+    <fieldset>
+        <legend><i class="fa-solid fa-check"></i> Caractéristiques</legend>
+        <div class="form-group">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description :</label>
+            <textarea id="description" name="description" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="image">Image :</label>
+            <input type="file" id="image" name="image">
+        </div>
+    </fieldset>
+    
+    <fieldset>
+        <legend><i class="fa-solid fa-retweet"></i> Approvisionnement</legend>
+        <div class="form-group">
+            <label for="price">Prix de vente :</label>
+            <input type="number" id="price" name="price" required min="0" step="0.1">
+        </div>
+    </fieldset>
+    
+    <div class="form-group">
+        <button type="submit" class="button button-primary">Ajouter</button>
+        <button type="reset" class="button button-primary">Annuler</button>
+    </div>
+</form>

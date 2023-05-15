@@ -1,0 +1,32 @@
+<main class="container">
+		<div class="slider">
+			<div><img src="www/img/slider-01.jpg" alt="Table seen from the top with drinks and plates with food"></div>
+			<div><img src="www/img/slider-02.jpg" alt="Zoom on a plate seen from the top and red chilli"></div>
+			<div><img src="www/img/slider-03.jpg" alt="Table seen from the top with drinks and plates with food"></div>
+		</div> <!-- end of .slider -->
+		<section class="intro">
+			<h1>Bienvenue au Fictional Restaurant</h1>
+			<img src="www/img/location.jpg" alt="view of the main dining room" class="intro-img">
+			<p>Le restaurant fictif nommé "Fictional Restaurant", est un projet développé pour le cadre d'un test de compétences pour Epitech. Il ne s'agit pas d'un établissement réel, mais plutôt d'un exemple imaginé pour illustrer mes compétences en matière de développement web. Fictional Restaurant est un restaurant de cuisine du monde, proposant des plats faits maison préparés avec des ingrédients frais et de qualité. Nous avons mis l'accent sur une ambiance chaleureuse et conviviale, avec un service attentionné et professionnel. Venez découvrir notre menu varié et savoureux dans un cadre agréable et accueillant !</p>
+			<p>Notre restaurant vous invite à découvrir une cuisine authentique et savoureuse dans un cadre chaleureux et convivial. Nous mettons un point d'honneur à sélectionner des produits frais et locaux pour composer nos plats, afin de vous offrir une expérience culinaire de qualité. Notre chef passionné crée des recettes originales en alliant les saveurs et les textures pour ravir vos papilles. Nous avons également une belle sélection de vins pour accompagner vos repas. Que ce soit pour un déjeuner entre amis, un dîner romantique ou une soirée en famille, notre équipe sera heureuse de vous accueillir et de vous offrir une expérience gastronomique inoubliable.</p>
+		</section>
+<section class="menu">
+		<h2>Carte du Restaurant</h2>
+            <?php foreach($products as $product) : ?>
+			<article>
+                <h3><?= $product['productName'] ?></h3>
+				<figure>
+                    <img src="www/img/products/<?= $product['image'] ?>"></img>
+					<figcaption><?= number_format ($product['price'], 2) ?><br>
+						<span>soft drink et dessert inclus</span>
+						<span>+ taxes</span>
+					</figcaption>
+				</figure>
+				<ul>
+					<li><i class="fas fa-star"></i><?= $product['description'] ?></li>
+				</ul>
+				<a href="index.php?action=order" class="details"><img src="www/img/fork-knife.svg" alt="">Ajouter au panier</a>
+			</article>
+	
+            <?php endforeach; ?>
+		</section>

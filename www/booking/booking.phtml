@@ -1,0 +1,38 @@
+<h3>Mes réservations</h3>
+<table class="bookingList">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Nombre de couverts</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($customerBookingList as $booking) { ?>
+            <tr>
+                <td><?= date('d-m-Y H:i', strtotime($booking['date'])) ?></td>
+                <td><?= $booking['numberPeople'] ?></td>
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>
+
+<h3><i class="fa-solid fa-utensils"></i>Réservation d'une table</h3>
+<form action="index.php?action=booking" method="post" onsubmit="validateBookingForm(event)">
+    <fieldset>
+        <legend>Informations</legend>
+        <label for="reservation_date">Date de réservation :</label>
+        <input type="date" id="bookingDate" name="bookingDate" required pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/yyyy" required maxlength="10">        
+        
+        <label for="reservation_time">à :</label>
+        <input type="time" id="bookingTime" name="bookingTime" required>
+        
+        <label for="guests" class="space">Nombre de couverts :</label>
+        <input type="number" id="numberPeople" name="numberPeople" min="1" max="10" required>
+    </fieldset>
+    
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Réserver</button>
+        <button type="reset" class="btn btn-default">Annuler</button>
+    </div>
+</form>
+<script type="text/javascript" src="www/js/valid_action_booking.js"></script>

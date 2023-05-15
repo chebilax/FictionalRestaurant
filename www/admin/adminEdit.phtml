@@ -1,0 +1,28 @@
+<h2 class="admin-title">Liste des produits</h2>
+
+<table class="product-table">
+    <thead>
+        <tr>
+            <th class="product-image">Image</th>
+            <th class="product-name">Nom</th>
+            <th class="product-description">Description</th>
+            <th class="product-price">Prix de vente</th>
+            <th class="product-action">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($products as $product): ?>
+        <tr>
+            <td class="product-image"><img src="www/img/products/<?= $product['image'] ?>"></td>
+            <td class="product-name"><?= $product['productName']; ?></td>
+            <td class="product-description"><?= $product['description']; ?></td>
+            <td class="product-price"><?= $product['price']; ?></td>
+            <td class="product-action">
+                <a href="index.php?action=adminEdit&id=<?= $product['productCode'] ?>" class="product-edit-button"><i class="fas fa-edit"></i> Modifier</a>
+                <a href="index.php?action=deleteProduct&id=<?= $product['productCode'] ?>" class="product-delete-button deleteProductButton"><i class="fas fa-trash-alt"></i> Supprimer</a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+<script type="text/javascript" src="www/js/valid_action_admin.js"></script>

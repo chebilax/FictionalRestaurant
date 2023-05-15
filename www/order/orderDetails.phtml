@@ -1,0 +1,70 @@
+<h2>Détails de la commande</h2>
+<a href="index.php?action=orderList" class="btn-back">Retour à la liste des commandes</a>
+<div class="customer-details">
+	<h3>Informations du client :</h3>
+	<p>Nom : <?= $orderDetails[0]['lastName'] ?></p>
+	<p>Prénom : <?= $orderDetails[0]['firstName'] ?></p>
+	<p>Adresse : <?= $orderDetails[0]['adress'] ?></p>
+	<p>Ville : <?= $orderDetails[0]['city'] ?></p>
+	<p>Code postal : <?= $orderDetails[0]['postalCode'] ?></p>
+	<p>Pays : <?= $orderDetails[0]['country'] ?></p>
+	<p>Téléphone : <?= $orderDetails[0]['phone'] ?></p>
+	<p>Email : <?= $orderDetails[0]['mail'] ?></p>
+</div>
+<table class="order-details">
+	<thead>
+		<tr>
+			<th>
+				Product Code
+			</th>
+			<th>
+				Product Name
+			</th>
+			<th>
+				Price Each
+			</th>
+			<th>
+				Quantity
+			</th>
+			<th>
+				Total Price
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+	<?php
+    $total = 0; 
+    foreach ($orderDetails as $orderDetail): 
+      $total += ($orderDetail['quantity'] * $orderDetail['priceEach']);
+    ?>
+      <tr>
+			<td>
+				<?= $orderDetail['productCode'] ?>
+			</td>
+			<td>
+				<?= $orderDetail['name'] ?>
+			</td>
+			<td>
+				<?= number_format($orderDetail['priceEach'], 2) ?>
+			</td>
+			<td>
+				<?= $orderDetail['quantity'] ?>
+			</td>
+			<td>
+				<?= number_format(($orderDetail['quantity'] * $orderDetail['priceEach']), 2) ?>
+			</td>
+		</tr>
+		<?php endforeach; ?>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="4">
+				Total
+			</td>
+			<td>
+				<?= number_format(($total), 2) ?>
+			</td>
+		</tr>
+	</tfoot>
+</table>
+

@@ -1,0 +1,27 @@
+<div class="edit-form">
+    <h2>Editer un produit</h2>
+            <div class="product-row">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="product-cell">
+                        <input type="hidden" name="productCode" value="<?= $product['productCode'] ?>">
+                    </div>
+                    <div class="product-cell">
+                        <input type="text" name="productName" id="productName" value="<?= $product['productName'] ?>" required>
+                    </div>
+                    <div class="product-cell">
+                        <textarea name="description" id="description" required><?= $product['description'] ?></textarea>
+                    </div>
+                    <div class="product-cell">
+                        <input type="number" name="price" id="price" step="0.1" value="<?= $product['price'] ?>" required>
+                    </div>
+                    <div class="product-cell">
+                        <img class="product-image" src="www/img/products/<?= $product['image'] ?>">
+                        <input type="file" name="image" id="image">
+                    </div>
+                
+                    <input type="submit" value="Enregistrer">
+                </form>
+        </div>
+       
+            
+        </div>

@@ -1,0 +1,25 @@
+<h2>Liste des commandes</h2>
+
+<!--<div class="table-wrapper">-->
+  <table class="orderList">
+    <thead>
+      <tr>
+        <th>Order Number</th>
+        <th>Customer Number</th>
+        <th>Date</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($orderList as $order) : ?>
+        <tr>
+          <td><a href="index.php?action=orderDetails&orderNumber=<?= $order['orderNumber'] ?>">
+          <?= $order['orderNumber']; ?></td>
+          <td><?= $order['customerNumber']; ?></td>
+          <td><?= $order['date']; ?></td>
+          <td><?= $order['total']; ?></td>
+        </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+<!--</div>-->

@@ -1,0 +1,23 @@
+<h2>Liste des réservations</h2>
+
+<table class="bookingList">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Nombre de personnes</th>
+            <th>Client</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($bookingList as $booking) : ?>
+            <tr>
+                <td class="center"><?= date('d-m-Y H:i', strtotime($booking['date'])) ?></td>
+                <td class="center"><?= $booking['numberPeople'] ?></td>
+                <td class="center"><?= $booking['customerNumber'] ?></td>
+                <td class="center"><a href="index.php?action=deleteBooking&reservationNumber=<?= $booking['reservationNumber'] ?>"><i class="fa-solid fa-trash deleteBookingButton"></i></a></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+<script type="text/javascript" src="www/js/valid_action_booking.js"></script>

@@ -1,0 +1,29 @@
+    
+<?php if (isset($_SESSION['admin_pseudo'])): ?>
+<h1>Bienvenue dans l'espace administrateur</h1>
+<ul id="homeAdmin">
+    <li><a class="button button-primary" href="index.php?action=addProduct">Ajouter un produit</a></li>
+    <li><a class="button button-primary" href="index.php?action=adminEdit">Modifier un produit</a></li>
+    <li><a class="button button-primary" href="index.php?action=bookingList">Afficher la liste des réservations</a></li>
+    <li><a class="button button-primary" href="index.php?action=orderList">Afficher la liste des commandes</a></li>
+</ul>
+<?php else: ?>
+  <div class="user-form-container">
+    <h2><i class="fa-solid fa-lock"></i> Espace administrateur</h2>
+      <form action="index.php?action=admin" method="post" class="user-form">
+        <fieldset>
+          <legend>Informations d'authentification</legend>
+            <label for="mail">Email :</label>
+            <input type="email" id="mail" name="mail" required>
+          <div class="form-group">
+            <label for="password">Mot de passe:</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+        </fieldset>
+        <div class="form-group">
+          <button type="submit" value="connexion" class="button button-primary">Connexion</button>
+        </div>
+      </form>
+  </div>
+<?php endif; ?>
+

@@ -1,0 +1,61 @@
+<div class="user-form-container">
+  <h2><i class="fa-solid fa-user-plus"></i> Création de compte</h2>
+  <form method="post" action="index.php?action=createAccount" class="user-form">
+    <fieldset>
+      <legend>Identité et coordonnées</legend>
+      <div class="form-group">
+        <label for="nom">Nom :</label>
+        <input type="text" name="lastName" id="lastName" required>
+      </div>
+      <div class="form-group">
+        <label for="prenom">Prénom :</label>
+        <input type="text" name="firstName" id="firstName" required>
+      </div>
+      <div class="form-group">
+        <label for="date_naissance">Date de naissance :</label>
+        <input type="date" name="birthDate" id="birthDate" required>
+      </div>
+      <div class="form-group">
+        <label for="adresse">Adresse :</label>
+        <input type="text" name="adress" id="adress" required>
+      </div>
+      <div class="form-group">
+        <label for="ville">Ville :</label>
+        <input type="text" name="city" id="city" required>
+      </div>
+      <div class="form-group">
+        <label for="code_postal">Code postal :</label>
+        <input type="text" name="postalCode" id="postalCode" required>
+      </div>
+      <div class="form-group">
+        <label for="pays">Pays :</label>
+        <input type="text" name="country" id="country" required>
+      </div>
+      <div class="form-group">
+        <label for="telephone">Téléphone :</label>
+        <input type="tel" name="phone" id="phone" required>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Informations d'authentification</legend>
+      <div class="form-group">
+        <label for="mail">Email :</label>
+        <input type="email" name="mail" id="mail" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe :</label>
+        <input type="password" name="password" id="password" required>
+        
+      </div>
+    </fieldset>
+
+    <div class="form-group">
+      <button type="submit" id="submit">Créer le compte</button>
+    </div>
+  </form>
+</div>
+
+  <script type="module" src="www/js/index.js"></script>
+
+
